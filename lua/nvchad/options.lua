@@ -5,7 +5,7 @@ local g = vim.g
 -------------------------------------- options ------------------------------------------
 o.laststatus = 3
 o.showmode = false
-o.maplocalleader = " "
+g.maplocalleader = " "
 
 o.clipboard = "unnamedplus"
 o.cursorline = true
