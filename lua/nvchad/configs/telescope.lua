@@ -1,5 +1,7 @@
 dofile(vim.g.base46_cache .. "telescope")
 
+local actions = require "telescope.actions"
+
 return {
   defaults = {
     prompt_prefix = "   ",
@@ -15,7 +17,18 @@ return {
       height = 0.80,
     },
     mappings = {
-      n = { ["q"] = require("telescope.actions").close },
+      i = {
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+      },
+      n = {
+        ["<esc>"] = actions.close,
+        ["j"] = actions.move_selection_next,
+        ["k"] = actions.move_selection_previous,
+      },
     },
   },
 
