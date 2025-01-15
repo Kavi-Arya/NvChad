@@ -53,7 +53,7 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-vim.opt.guifont = "JetBrainsMono NF:h15" -- the font used in graphical neovim applications
+vim.opt.guifont = "Comic Code:h13" -- the font used in graphical neovim applications
 
 
 -- add binaries installed by mason.nvim to path
