@@ -1,4 +1,4 @@
-local opt = vim.optop
+local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
