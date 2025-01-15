@@ -45,12 +45,31 @@ local options = {
     end, { "i", "s" }),
   },
 
+  -- sources = {
+  --   { name = "nvim_lsp" },
+  --   { name = "luasnip" },
+  --   { name = "buffer" },
+  --   { name = "nvim_lua" },
+  --   { name = "path" },
+  --   { name = "spell" },
+  -- },
+  --
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
+    {
+      name = "spell",
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          return true
+        end,
+        preselect_correct_word = true,
+      },
+    },
   },
 }
 
