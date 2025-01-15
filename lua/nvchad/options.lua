@@ -1,4 +1,4 @@
-local opt = vim.opt
+local opt = vim.optop
 local o = vim.o
 local g = vim.g
 
@@ -7,7 +7,6 @@ o.laststatus = 3
 o.showmode = false
 g.maplocalleader = " "
 
-o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
 
