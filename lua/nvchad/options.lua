@@ -11,6 +11,9 @@ o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
 
+g.loaded_netrw = 0
+g.loaded_netrwPlugin = 0
+
 -- Indenting
 o.expandtab = true
 o.shiftwidth = 2
