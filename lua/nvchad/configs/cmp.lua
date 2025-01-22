@@ -55,12 +55,6 @@ local options = {
   -- },
   --
   sources = {
-    { name = "cmp_tabnine" },
-    { name = "path" },
-    { name = "calc" },
-    { name = "treesitter" },
-    { name = "crates" },
-    { name = "tmux" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
