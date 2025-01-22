@@ -141,8 +141,6 @@ map("n", "<s-tab>", "<cmd>tabnew %<cr>", opts)
 map({ "n" }, "<s-h>", "<cmd>tabp<cr>", opts)
 map({ "n" }, "<s-l>", "<cmd>tabn<cr>", opts)
 
-vim.api.nvim_set_map("t", "<C-;>", "<C-\\><C-n>", opts)
-
 map("n", "<leader>o", ":lua vim.opt.number = true; vim.opt.textwidth = 0; vim.opt.wrapmargin = 0; vim.opt.wrap = true; vim.opt.linebreak = true; vim.opt.columns = 120<CR>", opts)
 
 -- theprimegen remaps
