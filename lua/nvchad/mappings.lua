@@ -189,4 +189,3 @@ map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
-
