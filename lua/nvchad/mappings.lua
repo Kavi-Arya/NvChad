@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "move end of line" })
@@ -100,8 +101,94 @@ map({ "n", "t" }, "<A-i>", function()
 end, { desc = "terminal toggle floating term" })
 
 -- whichkey
-map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all maps" })
 
 map("n", "<leader>wk", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, { desc = "whichkey query lookup" })
+
+map("n", "n", "nzz", opts)
+map("n", "N", "Nzz", opts)
+map("n", "*", "*zz", opts)
+map("n", "#", "#zz", opts)
+map("n", "g*", "g*zz", opts)
+map("n", "g#", "g#zz", opts)
+
+-- Stay in indent mode
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
+
+map("x", "p", [["_dP]])
+
+vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
+vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
+-- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
+
+map("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
+map("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+
+-- more good
+-- map({ "n", "o", "x" }, "<s-h>", "^", opts)
+-- map({ "n", "o", "x" }, "<s-l>", "g_", opts)
+
+-- tailwind bearable to work with
+map({ "n", "x" }, "j", "gj", opts)
+map({ "n", "x" }, "k", "gk", opts)
+-- map("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
+
+-- Tab navigation
+map("n", "<s-tab>", "<cmd>tabnew %<cr>", opts)
+map({ "n" }, "<s-h>", "<cmd>tabp<cr>", opts)
+map({ "n" }, "<s-l>", "<cmd>tabn<cr>", opts)
+
+vim.api.nvim_set_map("t", "<C-;>", "<C-\\><C-n>", opts)
+
+map("n", "<leader>o", ":lua vim.opt.number = true; vim.opt.textwidth = 0; vim.opt.wrapmargin = 0; vim.opt.wrap = true; vim.opt.linebreak = true; vim.opt.columns = 120<CR>", opts)
+
+-- theprimegen remaps
+-- map("n", "<leader>pv", vim.cmd.Ex)
+
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+map("n", "J", "mzJ`z")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+-- greatest remap ever
+map("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland
+map({"n", "v"}, "<leader>y", [["+y]])
+map("n", "<leader>Y", [["+Y]])
+map("n", "<leader>pp", [["+p]])
+
+
+map({"n", "v"}, "<leader>d", [["_d]])
+
+-- This is going to get me cancelled
+map("i", "<C-c>", "<Esc>")
+
+-- map("n", "<leader>f", vim.lsp.buf.format)
+
+
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+map("n", "<leader>m", "`")
+map("n", "<leader>M", '"')
+
+map("n", "<c-j>", "<c-d>zz")
+map("n", "<c-k>", "<c-u>zz")
+
+map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
+map("i", "<C-e>", "<End>", { desc = "move end of line" })
+map("i", "<C-h>", "<Left>", { desc = "move left" })
+map("i", "<C-l>", "<Right>", { desc = "move right" })
+map("i", "<C-j>", "<Down>", { desc = "move down" })
+map("i", "<C-k>", "<Up>", { desc = "move up" })
+
+map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+
