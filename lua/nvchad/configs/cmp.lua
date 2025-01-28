@@ -61,6 +61,7 @@ local options = {
     { name = "nvim_lua" },
     { name = "path" },
     { name = "codeium" },
+    { name = 'minuet' },
     {
       name = "spell",
       option = {
