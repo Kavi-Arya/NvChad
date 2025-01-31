@@ -18,13 +18,13 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
-map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
-map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
-map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
+-- map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
+-- map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
+-- map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
-map("n", "<leader>fm", function()
-  require("conform").format { lsp_fallback = true }
-end, { desc = "general format file" })
+-- map("n", "<leader>fm", function()
+--   require("conform").format { lsp_fallback = true }
+-- end, { desc = "general format file" })
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
@@ -45,23 +45,22 @@ map("n", "<leader>x", function()
 end, { desc = "buffer close" })
 
 -- Comment
-map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
-map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
+-- map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
+-- map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 -- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
+map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
+map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
+-- map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 
 map("n", "<leader>th", function()
   require("nvchad.themes").open()
@@ -141,7 +140,9 @@ map("n", "<s-tab>", "<cmd>tabnew %<cr>", opts)
 map({ "n" }, "<s-h>", "<cmd>tabp<cr>", opts)
 map({ "n" }, "<s-l>", "<cmd>tabn<cr>", opts)
 
-map("n", "<leader>o", ":lua vim.opt.number = true; vim.opt.textwidth = 0; vim.opt.wrapmargin = 0; vim.opt.wrap = true; vim.opt.linebreak = true; vim.opt.columns = 120<CR>", opts)
+map("n", "<leader>o",
+  ":lua vim.opt.number = true; vim.opt.textwidth = 0; vim.opt.wrapmargin = 0; vim.opt.wrap = true; vim.opt.linebreak = true; vim.opt.columns = 120<CR>",
+  opts)
 
 -- theprimegen remaps
 -- map("n", "<leader>pv", vim.cmd.Ex)
@@ -159,12 +160,12 @@ map("n", "N", "Nzzzv")
 map("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-map({"n", "v"}, "<leader>y", [["+y]])
+map({ "n", "v" }, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 map("n", "<leader>pp", [["+p]])
 
 
-map({"n", "v"}, "<leader>d", [["_d]])
+map({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 map("i", "<C-c>", "<Esc>")
