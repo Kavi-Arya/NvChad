@@ -45,8 +45,8 @@ map("n", "<leader>x", function()
 end, { desc = "buffer close" })
 
 -- Comment
--- map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
--- map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
+map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
+map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 -- nvimtree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
