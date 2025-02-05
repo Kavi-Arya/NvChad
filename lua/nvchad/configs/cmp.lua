@@ -3,9 +3,8 @@ dofile(vim.g.base46_cache .. "cmp")
 local cmp = require "cmp"
 
 local options = {
-  -- completion = { completeopt = "menu,menuone" },
-  completion = { completeopt = "noselect" },
-  preselect = cmp.PreselectMode.Item,
+  completion = { completeopt = "menu,menuone" },
+  -- completion = { completeopt = "noselect" },
 
   snippet = {
     expand = function(args)
