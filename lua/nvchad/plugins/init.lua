@@ -57,7 +57,7 @@ return {
 
   {
     "folke/which-key.nvim",
-    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
+    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g", "f", "b", "a", "v", "p", "u", "F5" },
     cmd = "WhichKey",
     opts = function()
       dofile(vim.g.base46_cache .. "whichkey")
