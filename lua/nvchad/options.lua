@@ -29,7 +29,7 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-vim.opt.guifont = "JetBrains Mono:h13" -- the font used in graphical neovim applications
+vim.opt.guifont = "Comic Code:h13" -- the font used in graphical neovim applications
 
 vim.opt.backup = false -- creates a backup file
 -- vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
