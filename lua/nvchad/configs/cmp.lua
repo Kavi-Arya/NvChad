@@ -72,7 +72,7 @@ local options = {
         dict = '/usr/share/dict/words'
       }
     },
-    { name  = "codeium" },
+    { name  = "codeium", priority = 10000000000 },
     {
       name = "spell",
       option = {
