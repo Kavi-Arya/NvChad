@@ -5,7 +5,7 @@ local cmp = require "cmp"
 local options = {
   -- completion = { completeopt = "menu,menuone" },
   completion = { completeopt = "noselect" },
-  preselect = cmp.PreselectMode.None,
+  preselect = cmp.PreselectMode.Item,
 
   snippet = {
     expand = function(args)
