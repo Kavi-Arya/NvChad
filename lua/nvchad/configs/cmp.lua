@@ -60,7 +60,16 @@ local options = {
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
-    { name = "codecompanion" },
+    -- { name = "codecompanion" },
+    {
+      name = 'look',
+      keyword_length = 2,
+      option = {
+        convert_case = true,
+        loud = true,
+        dict = '/usr/share/dict/words'
+      }
+    },
     { name  = "codeium" },
     {
       name = "spell",
