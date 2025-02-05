@@ -144,7 +144,7 @@ return {
       },
       {
         "tzachar/cmp-ai",
-        enabled = false,
+        event = "BufEnter",
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
           local cmp_ai = require("cmp_ai.config")
