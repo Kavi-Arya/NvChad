@@ -62,6 +62,7 @@ local options = {
     { name = "nvim_lua" },
     { name = "path" },
     { name = "git" },
+    { name = "cmp_ai" },
     -- { name = "codecompanion" },
     {
       name = 'look',
