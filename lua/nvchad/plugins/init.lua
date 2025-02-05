@@ -57,6 +57,7 @@ return {
 
   {
     "folke/which-key.nvim",
+    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
     keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g", "f", "b", "a", "v", "p", "u", "F5" },
     cmd = "WhichKey",
     opts = function()
@@ -138,10 +139,13 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
         "octaltree/cmp-look",
-        "petertriho/cmp-git",
       },
+    },
+    opts = function()
+      return require "nvchad.configs.cmp"
+    end,
+  },
 
   {
     "nvim-telescope/telescope.nvim",
