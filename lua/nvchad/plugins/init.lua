@@ -141,6 +141,32 @@ return {
         "hrsh7th/cmp-path",
         "octaltree/cmp-look",
         -- "tzachar/cmp-ai",
+        {
+          "tzachar/cmp-ai",
+          event = "InsertEnter",
+          enabled = false,
+          dependencies = "nvim-lua/plenary.nvim",
+          config = function()
+            local cmp_ai = require("cmp_ai.config")
+
+            cmp_ai:setup {
+              max_lines = 1000,
+              notify = false,
+              notify_callback = function(msg)
+                vim.notify(msg)
+              end,
+              run_on_every_keystroke = true,
+              ignored_file_types = {
+                TelescopePrompt = true,
+              },
+              -- provider = ollama
+              provider = "Ollama",
+              provider_options = {
+                model = "qwen2.5-coder:7b",
+              },
+            }
+          end,
+        },
       },
     },
     opts = function()
@@ -148,32 +174,6 @@ return {
     end,
   },
 
-  {
-    "tzachar/cmp-ai",
-    event = "InsertEnter",
-    enabled = false,
-    dependencies = "nvim-lua/plenary.nvim",
-    config = function()
-      local cmp_ai = require("cmp_ai.config")
-
-      cmp_ai:setup {
-        max_lines = 1000,
-        notify = false,
-        notify_callback = function(msg)
-          vim.notify(msg)
-        end,
-        run_on_every_keystroke = true,
-        ignored_file_types = {
-          TelescopePrompt = true,
-        },
-        -- provider = ollama
-        provider = "Ollama",
-        provider_options = {
-          model = "qwen2.5-coder:7b",
-        },
-      }
-    end,
-  },
 
   {
     "nvim-telescope/telescope.nvim",
