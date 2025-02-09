@@ -140,7 +140,7 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "octaltree/cmp-look",
-        "tzachar/cmp-ai",
+        -- "tzachar/cmp-ai",
       },
     },
     opts = function()
@@ -150,6 +150,7 @@ return {
 
   {
     "tzachar/cmp-ai",
+    event = "InsertEnter",
     enabled = false,
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
