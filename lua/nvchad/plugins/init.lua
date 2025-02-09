@@ -140,7 +140,7 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "octaltree/cmp-look",
-        -- "tzachar/cmp-ai",
+        "tzachar/cmp-ai",
         {
           "tzachar/cmp-ai",
           event = "InsertEnter",
