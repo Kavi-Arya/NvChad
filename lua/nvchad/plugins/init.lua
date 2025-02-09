@@ -57,7 +57,7 @@ return {
 
   {
     "folke/which-key.nvim",
-    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
+    -- keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
     keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g", "f", "b", "a", "v", "p", "u", "F5" },
     cmd = "WhichKey",
     opts = function()
@@ -140,10 +140,37 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "octaltree/cmp-look",
+        "tzachar/cmp-ai",
       },
     },
     opts = function()
       return require "nvchad.configs.cmp"
+    end,
+  },
+
+  {
+    "tzachar/cmp-ai",
+    enabled = false,
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      local cmp_ai = require("cmp_ai.config")
+
+      cmp_ai:setup {
+        max_lines = 1000,
+        notify = false,
+        notify_callback = function(msg)
+          vim.notify(msg)
+        end,
+        run_on_every_keystroke = true,
+        ignored_file_types = {
+          TelescopePrompt = true,
+        },
+        -- provider = ollama
+        provider = "Ollama",
+        provider_options = {
+          model = "qwen2.5-coder:7b",
+        },
+      }
     end,
   },
 
