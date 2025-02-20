@@ -29,22 +29,45 @@ return {
   },
 
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "User FilePost",
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
     opts = {
-      indent = { char = "│", highlight = "IblChar" },
-      scope = { char = "│", highlight = "IblScopeChar" },
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      bigfile = { enabled = true },
+      dashboard = { enabled = false },
+      explorer = { enabled = false },
+      indent = { enabled = true },
+      input = { enabled = true },
+      picker = { enabled = false },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      scope = { enabled = true },
+      scroll = { enabled = false },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
     },
-    config = function(_, opts)
-      dofile(vim.g.base46_cache .. "blankline")
-
-      local hooks = require "ibl.hooks"
-      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-      require("ibl").setup(opts)
-
-      dofile(vim.g.base46_cache .. "blankline")
-    end,
-  },
+  }
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = "User FilePost",
+  --   opts = {
+  --     indent = { char = "│", highlight = "IblChar" },
+  --     scope = { char = "│", highlight = "IblScopeChar" },
+  --   },
+  --   config = function(_, opts)
+  --     dofile(vim.g.base46_cache .. "blankline")
+  --
+  --     local hooks = require "ibl.hooks"
+  --     hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+  --     require("ibl").setup(opts)
+  --
+  --     dofile(vim.g.base46_cache .. "blankline")
+  --   end,
+  -- },
 
   -- file managing , picker etc
   {
